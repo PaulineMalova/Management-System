@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Teacher</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style type="text/css">
+        body {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 30px 100px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="formbody">
+        <h2>Edit teacher</h2>
+
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+
+        <form method="POST">{%csrf_token%}
+
+
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                    {{form.first_name|as_crispy_field}}
+                </div>
+
+                <div class="form-group col-md-6 mb-0">
+                    {{form.last_name|as_crispy_field}}
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-0">
+                    {{form.gender|as_crispy_field}}
+                </div>
+
+                <div class="form-group col-md-4 mb-0">
+                    {{form.id_number|as_crispy_field}}
+                </div>
+
+                <div class="form-group col-md-4 mb-0">
+                    {{form.email|as_crispy_field}}
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4 mb-0">
+                    {{form.phone_number|as_crispy_field}}
+                </div>
+
+                <div class="form-group col-md-4 mb-0">
+                    {{form.date_employed|as_crispy_field}}
+                </div>
+
+                <div class="form-group col-md-4 mb-0">
+                    {{form.profession|as_crispy_field}}
+                </div>
+            </div>
+
+            {{form.subject_taught|as_crispy_field}}
+
+            {{form.image|as_crispy_field}}
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary"> Add </button>
+
+
+    </form>
+
+    {% endblock %}
+    </div>
+
+</body>
+
+</html>

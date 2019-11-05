@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 30px 0px;
+            background-color: #ccc;
+            background-image: url(../img/image.jpg);
+            background-repeat: no-repeat;
+        }
+
+        .form {
+            background-color: antiquewhite;
+            width: 500px;
+            margin: 100px auto;
+            padding: 20px 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form">
+        {% if user.is_authenticated %}
+        <h2>Welcome {{user.username}}!</h2>
+        <p>Add a student</p>
+        <button><a href="/student/add/"> Add student </a></button>
+
+        <p>or</p>
+
+        <p>Log out</p>
+        <button><a href="/accounts/logout/"> Log out </a></button>
+
+        {% else %}
+        <h2>Hello guest</h2>
+        <p>You can log in</p>
+        <button><a href="/accounts/login/"> Log in </a></button>
+        <p>or</p>
+
+        <p>Create an account</p>
+        <button><a href="/accounts/register/"> Create account </a></button>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

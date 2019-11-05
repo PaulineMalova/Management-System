@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>All Teachers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/teacher/add"><button>ADD TEACHER</button></a>
+
+    <table class="table table-striped table-bordered table-condensed table-hover">
+
+        <tr>
+            <th class="col-sm-2.5">First Name</th>
+            <th class="col-sm-2.5">Last Name</th>
+            <th class="col-sm-2.5">Profession</th>
+            <th class="col-sm-2.5">Subject Taught</th>
+            <th>Details</th>
+            <th>Edit</th>
+
+        </tr>
+
+        {% for teacher in teachers %}
+
+        <tr>
+            <td>{{ teacher.first_name }}</td>
+            <td>{{ teacher.last_name }}</td>
+            <td>{{ teacher.profession }}</td>
+            <td>{{ teacher.subject_taught }}</td>
+            <td><a href="/teacher/view/{{teacher.pk}}/">View more</a></td>
+            <td><a href="/teacher/edit/{{teacher.pk}}/">Edit</a></td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>All_students</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 30px;
+            background-color: #eee;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/student/add/"><button>ADD STUDENT</button></a>
+
+    <table class="table table-striped table-bordered table-condensed table-hover">
+
+
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Registration Number</th>
+            <th>Gender</th>
+            <th>Details</th>
+            <th>Edit</th>
+
+        </tr>
+
+        {% for student in students %}
+
+        <tr>
+            <td>{{ student.first_name }}</td>
+            <td>{{ student.last_name }}</td>
+            <td>{{ student.registration_number }}</td>
+            <td>{{ student.gender }}</td>
+            <td><a href="/student/view/{{student.pk}}/">View more</a></td>
+            <td><a href="/student/edit/{{student.pk}}/">Edit</a></td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+
+</html>
