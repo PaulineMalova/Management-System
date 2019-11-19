@@ -9,7 +9,7 @@ class AddCourseTestCase(TestCase):
     def setUp(self):
         self.data = {
             "name": "Python",
-            "duration_in_months": 9,
+            "duration_in_months": 10,
             "start_date": datetime.date(2019,2,11),
             "end_date": datetime.date(2019,11,15),
             "course_description": "Interesting course",
