@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'student/media')
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 ACCOUNT_ACTIVATION_DAYS = 10
 LOGIN_REDIRECT_URL = "/"
